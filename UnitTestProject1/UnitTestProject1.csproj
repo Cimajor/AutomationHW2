@@ -59,9 +59,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="General\Google.cs" />
+    <Compile Include="HomePage\GoogleHomePageMethods.cs" />
+    <Compile Include="HomePage\GoogleHomePageSelector.cs" />
+    <Compile Include="SearchResultPage\SearchResultPageMethods.cs" />
+    <Compile Include="SearchResultPage\SerchResultPageSeletors.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

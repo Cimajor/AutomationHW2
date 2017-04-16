@@ -11,38 +11,25 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
-        ChromeDriver chrome;
-        [TestMethod]
-        public void TestMethod1()
-        {
-            int counter = 1;
+        GoogleHomePageMethods GoogleHomePageMethods = new GoogleHomePageMethods();
+        SearchResultPageMethods GoogleSearchResultMethods = new SearchResultPageMethods();
 
-            chrome = new ChromeDriver("C:\\");
-            String baseUrl = "http://www.google.com.ua/";
-            chrome.Navigate().GoToUrl(baseUrl);
-            
-            chrome.FindElementById("lst-ib").SendKeys("Automation Testing");
-            chrome.FindElementById("_fZl").Click();
-            
-#pragma warning disable CS0618 // Тип или член устарел
-            chrome.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-            Actions action = new Actions(chrome);
-
-            for (; counter <= 5; counter++)
-            {
-                IWebElement body = chrome.FindElement(By.XPath(".//*[@id='rso']/div/div/div["+counter+"]/div/h3/a"));
-                action.KeyDown(Keys.Control).MoveToElement(body).Click().Perform();
-
-            }
-            chrome.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
-
-#pragma warning restore CS0618 // Тип или член устаре
-
+        [TestInitialize]
+        public void Start() {
+            GoogleHomePageMethods.OpenHomePage();
         }
+        
+        [TestMethod]
+        public void TestExecution()
+        {
+            GoogleHomePageMethods.InputInSearchField("Automation testing");
+            GoogleSearchResultMethods.OpenFewLinks(5);
+        }
+
         [TestCleanup]
         public void TearDown()
         {
-            chrome.Quit();
+            GoogleHomePageMethods.CloseBrowser();
         }
     }
 }
