@@ -64,6 +64,8 @@
     <Compile Include="General\Google.cs" />
     <Compile Include="GoogleHomePage\GoogleHomePageMethods.cs" />
     <Compile Include="GoogleHomePage\GoogleHomePageSelector.cs" />
+    <Compile Include="LoginPage\LoginPageMethods.cs" />
+    <Compile Include="LoginPage\LoginPageSelectors.cs" />
     <Compile Include="MailsMethods\MailsMethods.cs" />
     <Compile Include="MailsMethods\MailVariable.cs" />
     <Compile Include="MailTest.cs" />

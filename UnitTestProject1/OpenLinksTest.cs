@@ -15,19 +15,19 @@ namespace UnitTestProject1
         SearchResultPageMethods GoogleSearchResultMethods = new SearchResultPageMethods();
 
         [TestInitialize]
-        public void Start() {
+        private void Start() {
             GoogleHomePageMethods.OpenHomePage();
         }
         
         [TestMethod]
-        public void TestExecution()
+        private void TestExecution()
         {
             GoogleHomePageMethods.InputInSearchField("Automation testing");
             GoogleSearchResultMethods.OpenFewLinks(5);
         }
 
         [TestCleanup]
-        public void TearDown()
+        private void TearDown()
         {
             GoogleHomePageMethods.CloseBrowser();
         }

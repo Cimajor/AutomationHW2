@@ -16,13 +16,18 @@ namespace UnitTestProject1
         public void OpenHomePage()    //Open Google home page
         {
             chrome = new ChromeDriver("C:\\");
-            chrome.Navigate().GoToUrl(GoogleHomePageSelectors.homePageUrl());
+            chrome.Navigate().GoToUrl(GoogleHomePageSelectors.homePageUrl);
         }
 
         public void InputInSearchField(String searchInput) // Input something in search fied and press search button
         {
-            chrome.FindElementById(GoogleHomePageSelectors.SearchFieldID).SendKeys(searchInput);
-            chrome.FindElementById(GoogleHomePageSelectors.ConfirmSearchButtonId).Click();
+            chrome.FindElementById(GoogleHomePageSelectors.searchFieldID).SendKeys(searchInput);
+            chrome.FindElementById(GoogleHomePageSelectors.confirmSearchButtonId).Click();
+        }
+
+        public void ClickOnLoginButton()
+        {
+            chrome.FindElementById(GoogleHomePageSelectors.loginButtonId).Click();
         }
 
         public void CloseBrowser()

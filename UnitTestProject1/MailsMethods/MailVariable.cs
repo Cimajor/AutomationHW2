@@ -12,5 +12,7 @@ namespace UnitTestProject1
         public static int smtpPort = 25;
         public static string smtpServer = "aspmx.l.google.com";
         public static string smtpPassword = "123asdQWE";
+        public static string gmailMailUrl = "https://mail.google.com/mail/#inbox";
+        
     }
 }

@@ -6,22 +6,33 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System.Net.Mail;
-
+using System.Net;
 
 namespace UnitTestProject1
 {
     class MailsMethods
     {
-        public static void SendMail(string SmtpUser, int smtpPort, string smtpServer ) {
-            MailMessage mail = new MailMessage(SmtpUser, SmtpUser);
-            SmtpClient client = new SmtpClient();
-            client.Port = smtpPort;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Host = smtpServer;
-            mail.Subject = "Check it";
-            mail.Body = "this is my test email body";
-            client.Send(mail);
+        public static void CreateTestMessage(string user, int port, string server)
+        {
+            string to = user;
+            string from = user;
+            string subject = "Using the new SMTP client.";
+            string body = @"Using this new feature, you can send an e-mail message from an application very easily.";
+            MailMessage message = new MailMessage(from, to, subject, body);
+            SmtpClient client = new SmtpClient(server, port);
+            // Credentials are necessary if the server requires the client 
+            // to authenticate before it will send e-mail on the client's behalf.
+            client.Credentials = CredentialCache.DefaultNetworkCredentials;
+
+            try
+            {
+                client.Send(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in CreateTestMessage1(): {0}",
+                            ex.ToString());
+            }
         }
 
         void CheckMail()

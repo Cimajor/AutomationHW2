@@ -11,10 +11,25 @@ namespace UnitTestProject1
     [TestClass]
     public class MailTest
     {
-        [TestMethod]
-        public void TestExecution()
+        GoogleHomePageMethods GoogleHomePageMethods = new GoogleHomePageMethods();
+
+        [TestInitialize]
+        private void Start()
         {
-            MailsMethods.SendMail(MailVariable.smtpUser, MailVariable.smtpPort, MailVariable.smtpServer);
+            MailsMethods.CreateTestMessage(MailVariable.smtpUser, MailVariable.smtpPort, MailVariable.smtpServer);
+            GoogleHomePageMethods.OpenHomePage();
+        }
+
+        [TestMethod]
+        private void TestExecution()
+        {
+            LoginPageMethods.LoginToGmail(LoginPageSelectors.userMailLoginName, LoginPageSelectors.userMailPasswordId);
+        }
+
+        [TestCleanup]
+        private void TearDown()
+        {
+            GoogleHomePageMethods.CloseBrowser();
         }
 
     }
