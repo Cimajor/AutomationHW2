@@ -13,7 +13,7 @@ namespace UnitTestProject1
     {
         ChromeDriver chrome;
 
-        public void OpenFewLinks(int linksNumber )   // Open seted numbers of links from serch result  
+        public void OpenFewLinks(int linksNumber )   // Open setted numbers of links from serch result  
         {
             int counter = 1;
 
@@ -23,7 +23,7 @@ namespace UnitTestProject1
 
             for (; counter <= linksNumber; counter++)
             {
-                IWebElement body = chrome.FindElement(By.XPath(".//*[@id='rso']/div/div/div[" + counter + "]/div/h3/a"));
+                IWebElement body = chrome.FindElement(By.XPath(SerchResultPageSeletors.LinkNumberSelector(linksNumber)));
                 action.KeyDown(Keys.Control).MoveToElement(body).Click().Perform();
 
             }
