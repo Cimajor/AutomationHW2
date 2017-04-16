@@ -9,7 +9,7 @@ using OpenQA.Selenium.Interactions;
 namespace UnitTestProject1
 {
     [TestClass]
-    public class UnitTest1
+    public class OpenLinksTest
     {
         GoogleHomePageMethods GoogleHomePageMethods = new GoogleHomePageMethods();
         SearchResultPageMethods GoogleSearchResultMethods = new SearchResultPageMethods();

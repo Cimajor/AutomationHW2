@@ -54,17 +54,22 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
     <Compile Include="General\Google.cs" />
-    <Compile Include="HomePage\GoogleHomePageMethods.cs" />
-    <Compile Include="HomePage\GoogleHomePageSelector.cs" />
+    <Compile Include="GoogleHomePage\GoogleHomePageMethods.cs" />
+    <Compile Include="GoogleHomePage\GoogleHomePageSelector.cs" />
+    <Compile Include="MailsMethods\MailsMethods.cs" />
+    <Compile Include="MailsMethods\MailVariable.cs" />
+    <Compile Include="MailTest.cs" />
     <Compile Include="SearchResultPage\SearchResultPageMethods.cs" />
-    <Compile Include="SearchResultPage\SerchResultPageSeletors.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="SearchResultPage\SearchResultPageSeletors.cs" />
+    <Compile Include="OpenLinksTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

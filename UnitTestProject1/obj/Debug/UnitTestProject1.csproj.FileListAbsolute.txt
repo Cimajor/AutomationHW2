@@ -16,7 +16,6 @@ c:\users\illia\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestPr
 c:\users\illia\documents\visual studio 2015\Projects\UnitTestProject1\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\UnitTestProject1.dll
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
-C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\Selenium.WebDriverBackedSelenium.dll
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\WebDriver.dll
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\WebDriver.Support.dll
@@ -26,7 +25,6 @@ C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProje
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\WebDriver.xml
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\WebDriver.Support.pdb
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\WebDriver.Support.xml
-C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\illia\Documents\Visual Studio 2015\Projects\AutomationHW1\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
