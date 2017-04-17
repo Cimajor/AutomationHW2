@@ -8,13 +8,14 @@ using OpenQA.Selenium.Interactions;
 
 namespace UnitTestProject1 
 {
-     class GoogleHomePageMethods : Google
+     class GoogleHomePageMethods
     {
         ChromeDriver chrome;
-        GoogleHomePageSelectors GoogleHomePageSelectors = new GoogleHomePageSelectors();
+        
 
         public void OpenHomePage()    //Open Google home page
         {
+            GoogleHomePageSelectors GoogleHomePageSelectors = new GoogleHomePageSelectors();
             chrome = new ChromeDriver("C:\\");
             chrome.Navigate().GoToUrl(GoogleHomePageSelectors.homePageUrl);
         }

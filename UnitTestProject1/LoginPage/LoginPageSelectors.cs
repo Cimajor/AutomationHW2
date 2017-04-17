@@ -12,6 +12,7 @@ namespace UnitTestProject1
         public static string userMailLoginId = "Email";
         public static string confirmLoginId = "next";
         public static string userMailPasswordId = "123asdQWE";
+        public static string passwordFieldId = "Passwd";
         public static string passwordConfirmationButtonId = "signIn";
         public static string denialPhoneConfirmation = ".//*[@id='view_container']/div/div/div/div/div[1]/div[3]/div[1]";
     }
