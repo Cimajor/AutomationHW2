@@ -5,6 +5,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using System.Threading;
 
 namespace UnitTestProject1
 {
@@ -13,7 +14,7 @@ namespace UnitTestProject1
     {
         ChromeDriver chrome;
 
-        public void OpenFewLinks(int linksNumber )   // Open setted numbers of links from serch result  
+        public void OpenFewLinks(int linksNumber)   // Open setted numbers of links from serch result  
         {
             int counter = 1;
 
@@ -23,9 +24,10 @@ namespace UnitTestProject1
 
             for (; counter <= linksNumber; counter++)
             {
-                IWebElement body = chrome.FindElement(By.XPath(SerchResultPageSeletors.LinkNumberSelector(linksNumber)));
+                IWebElement body = chrome.FindElement(By.XPath(SerchResultPageSeletors.LinkNumberSelector(counter)));
+                chrome.FindElementByXPath(SerchResultPageSeletors.LinkNumberSelector(counter)).Click();
+                Thread.Sleep(1500);
                 action.KeyDown(Keys.Control).MoveToElement(body).Click().Perform();
-
             }
             chrome.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
 

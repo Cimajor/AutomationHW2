@@ -5,6 +5,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using System.Threading;
 
 namespace UnitTestProject1
 {
@@ -15,19 +16,19 @@ namespace UnitTestProject1
         SearchResultPageMethods GoogleSearchResultMethods = new SearchResultPageMethods();
 
         [TestInitialize]
-        private void Start() {
+        public void Start() {
             GoogleHomePageMethods.OpenHomePage();
         }
         
         [TestMethod]
-        private void TestExecution()
+        public void TestExecution()
         {
             GoogleHomePageMethods.InputInSearchField("Automation testing");
             GoogleSearchResultMethods.OpenFewLinks(5);
         }
 
         [TestCleanup]
-        private void TearDown()
+        public void TearDown()
         {
             GoogleHomePageMethods.CloseBrowser();
         }

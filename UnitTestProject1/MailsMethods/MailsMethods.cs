@@ -7,11 +7,14 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using System.Net.Mail;
 using System.Net;
+using System.Collections.Generic;
 
 namespace UnitTestProject1
 {
     class MailsMethods
     {
+        ChromeDriver chrome;
+
         public static void CreateTestMessage(string user, int port, string server)
         {
             string to = user;
@@ -23,7 +26,6 @@ namespace UnitTestProject1
             // Credentials are necessary if the server requires the client 
             // to authenticate before it will send e-mail on the client's behalf.
             client.Credentials = CredentialCache.DefaultNetworkCredentials;
-
             try
             {
                 client.Send(message);
@@ -34,9 +36,7 @@ namespace UnitTestProject1
                             ex.ToString());
             }
         }
-
-        void CheckMail()
-        {
+        public void checkMailsSubject() {
 
         }
     }

@@ -10,12 +10,10 @@ namespace UnitTestProject1
 {
      class GoogleHomePageSelectors : Google
     {
-
-        public static String searchFieldID = "lst - ib";
+        public static String searchFieldID = "lst-ib";
         public static String confirmSearchButtonId = "_fZl";
         public static String loginButtonId = "gb_70";
         public static String homePageUrl = "http://www.google.com.ua/";
         public static String homePageMenuButtonId = "http://www.google.com.ua/";
-
     }
 }

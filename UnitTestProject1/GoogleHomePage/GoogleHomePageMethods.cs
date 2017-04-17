@@ -5,10 +5,11 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using System.Threading;
 
 namespace UnitTestProject1 
 {
-     class GoogleHomePageMethods
+     class GoogleHomePageMethods : Google
     {
         ChromeDriver chrome;
         
@@ -22,8 +23,11 @@ namespace UnitTestProject1
 
         public void InputInSearchField(String searchInput) // Input something in search fied and press search button
         {
+
             chrome.FindElementById(GoogleHomePageSelectors.searchFieldID).SendKeys(searchInput);
+            Thread.Sleep(1500);
             chrome.FindElementById(GoogleHomePageSelectors.confirmSearchButtonId).Click();
+            Thread.Sleep(1500);
         }
 
         public void ClickOnLoginButton()
