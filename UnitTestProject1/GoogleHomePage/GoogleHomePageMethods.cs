@@ -25,9 +25,7 @@ namespace UnitTestProject1
         {
 
             chrome.FindElementById(GoogleHomePageSelectors.searchFieldID).SendKeys(searchInput);
-            Thread.Sleep(1500);
             chrome.FindElementById(GoogleHomePageSelectors.confirmSearchButtonId).Click();
-            Thread.Sleep(1500);
         }
 
         public void ClickOnLoginButton()
@@ -38,6 +36,12 @@ namespace UnitTestProject1
         public void CloseBrowser()
         {
             chrome.Quit();
+        }
+
+        public void waiter()
+        {
+            const int defaultWait = 20;
+            WebDriverWait Wait = new WebDriverWait(chrome, TimeSpan.FromSeconds(defaultWait));
         }
 
 

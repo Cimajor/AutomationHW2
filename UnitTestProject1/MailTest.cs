@@ -13,6 +13,7 @@ namespace UnitTestProject1
     {
         LoginPageMethods LoginPageMethods = new LoginPageMethods();
         GoogleHomePageMethods GoogleHomePageMethods = new GoogleHomePageMethods();
+        MailsMethods MailsMethods = new MailsMethods();
 
         [TestInitialize]
         public void Start()
@@ -25,6 +26,7 @@ namespace UnitTestProject1
         public void TestExecution()
         {
             LoginPageMethods.LoginToGmail(LoginPageSelectors.userMailLoginName, LoginPageSelectors.userMailPasswordId);
+            MailsMethods.checkMailsSubject();
         }
 
         [TestCleanup]

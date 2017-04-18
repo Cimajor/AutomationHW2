@@ -23,6 +23,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestExecution()
         {
+            GoogleHomePageMethods.waiter();
             GoogleHomePageMethods.InputInSearchField("Automation testing");
             GoogleSearchResultMethods.OpenFewLinks(5);
         }

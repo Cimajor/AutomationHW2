@@ -36,8 +36,10 @@ namespace UnitTestProject1
                             ex.ToString());
             }
         }
-        public void checkMailsSubject() {
-
+        public void checkMailsSubject()
+        {
+            //chrome.FindElementById(":3f").Text.Equals("Using the new SMTP client.");
+            Assert.IsTrue(chrome.PageSource.Contains("Using the new SMTP client."));
         }
     }
 }
