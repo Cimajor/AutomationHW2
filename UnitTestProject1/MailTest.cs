@@ -11,29 +11,29 @@ namespace UnitTestProject1
     [TestClass]
     public class MailTest
     {
-        LoginPageMethods LoginPageMethods = new LoginPageMethods();
-        GoogleHomePageMethods GoogleHomePageMethods = new GoogleHomePageMethods();
-        MailsMethods MailsMethods = new MailsMethods();
+        //LoginPageMethods loginPageMethods = new LoginPageMethods();
+        //GoogleHomePageMethods GoogleHomePageMethods = new GoogleHomePageMethods();
+        //MailsMethods mailsMethods = new MailsMethods();
 
-        [TestInitialize]
-        public void Start()
-        {
-            //MailsMethods.CreateTestMessage(MailVariable.smtpUser, MailVariable.smtpPort, MailVariable.smtpServer);
-            LoginPageMethods.OpenHomePage();
-        }
+        //[TestInitialize]
+        //public void Start()
+        //{
+        //    //MailsMethods.CreateTestMessage(MailVariable.smtpUser, MailVariable.smtpPort, MailVariable.smtpServer);
+        //    loginPageMethods.OpenHomePage();
+        //}
 
-        [TestMethod]
-        public void TestExecution()
-        {
-            LoginPageMethods.LoginToGmail(LoginPageSelectors.userMailLoginName, LoginPageSelectors.userMailPasswordId);
-            MailsMethods.checkMailsSubject();
-        }
+        //[TestMethod]
+        //public void TestExecution()
+        //{
+        //    loginPageMethods.LoginToGmail(LoginPageSelectors.userMailLoginName, LoginPageSelectors.userMailPasswordId);
+        //    mailsMethods.checkMailsSubject();
+        //}
 
-        [TestCleanup]
-        public void TearDown()
-        {
-            GoogleHomePageMethods.CloseBrowser();
-        }
+        //[TestCleanup]
+        //public void TearDown()
+        //{
+        //    GoogleHomePageMethods.CloseBrowser();
+        //}
 
     }
 }

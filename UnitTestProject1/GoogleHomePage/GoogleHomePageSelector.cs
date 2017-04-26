@@ -8,7 +8,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace UnitTestProject1
 {
-     class GoogleHomePageSelectors : Google
+     class GoogleHomePageSelectors : Base
     {
         public static String searchFieldID = "lst-ib";
         public static String confirmSearchButtonId = "_fZl";

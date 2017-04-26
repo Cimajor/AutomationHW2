@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitTestProject1
 {
-    class SerchResultPageSeletors : Google
+    class SerchResultPageSeletors : Base
     {
         public static String LinkNumberSelector(int linknumber)
         {

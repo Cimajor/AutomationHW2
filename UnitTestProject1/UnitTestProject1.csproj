@@ -61,7 +61,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="General\Google.cs" />
+    <Compile Include="General\Base.cs" />
     <Compile Include="GoogleHomePage\GoogleHomePageMethods.cs" />
     <Compile Include="GoogleHomePage\GoogleHomePageSelector.cs" />
     <Compile Include="LoginPage\LoginPageMethods.cs" />

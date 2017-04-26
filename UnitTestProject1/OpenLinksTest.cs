@@ -12,26 +12,33 @@ namespace UnitTestProject1
     [TestClass]
     public class OpenLinksTest
     {
-        GoogleHomePageMethods GoogleHomePageMethods = new GoogleHomePageMethods();
-        SearchResultPageMethods GoogleSearchResultMethods = new SearchResultPageMethods();
+        Base baseInst;
+        GoogleHomePageMethods googleHomePageMethods;
+        SearchResultPageMethods googleSearchResultMethods;
 
         [TestInitialize]
         public void Start() {
-            GoogleHomePageMethods.OpenHomePage();
+            baseInst = new Base();
+            googleHomePageMethods = new GoogleHomePageMethods(baseInst);
+            googleSearchResultMethods = new SearchResultPageMethods(baseInst);
+
+            baseInst.OpenHomePage();
         }
         
         [TestMethod]
         public void TestExecution()
         {
-            GoogleHomePageMethods.waiter();
-            GoogleHomePageMethods.InputInSearchField("Automation testing");
-            GoogleSearchResultMethods.OpenFewLinks(5);
+            baseInst.waiter();
+            googleHomePageMethods.InputInSearchField("Automation testing");
+            Thread.Sleep(1500);
+            googleSearchResultMethods.OpenLinks(5);
+            Thread.Sleep(1500);
         }
 
         [TestCleanup]
         public void TearDown()
         {
-            GoogleHomePageMethods.CloseBrowser();
+            baseInst.CloseBrowser();
         }
     }
 }
