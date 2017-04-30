@@ -22,11 +22,11 @@ namespace UnitTestProject1
         {
             int counter = 1;
             ChromeDriver chrome = baseIns.getChromeDriver();
-
             for (; counter <= linksNumber; counter++)
             {
-                chrome.FindElement(By.XPath(SerchResultPageSeletors.LinkNumberSelector(counter))).SendKeys(Keys.Control);
-                chrome.SwitchTo().Window(chrome.WindowHandles.Last());
+                var et = chrome.FindElement(By.XPath(SerchResultPageSeletors.LinkNumberSelector(counter)));
+                et.SendKeys(Keys.Control + Keys.Return);
+                chrome.SwitchTo().Window(chrome.WindowHandles.First());
             }
 
         }

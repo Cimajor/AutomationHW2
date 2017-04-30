@@ -10,7 +10,7 @@ namespace UnitTestProject1
     {
         public static String LinkNumberSelector(int linknumber)
         {
-            String linkSelector = (".//*[@id='rso']/div/div["+linknumber+"]/div/h3/a");
+            String linkSelector = (".//*[@id='rso']/div/div/div["+linknumber+"]/div/div/h3/a");
             return linkSelector;
         }
     }
