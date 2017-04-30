@@ -30,6 +30,8 @@ namespace UnitTestProject1
         {
             String baseUrl = "http://www.google.com.ua/";
             chrome.Navigate().GoToUrl(baseUrl);
+            chrome.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+
         }
 
         public ChromeDriver getChromeDriver()

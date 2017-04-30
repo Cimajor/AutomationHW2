@@ -30,9 +30,7 @@ namespace UnitTestProject1
         {
             baseInst.waiter();
             googleHomePageMethods.InputInSearchField("Automation testing");
-            Thread.Sleep(1500);
             googleSearchResultMethods.OpenLinks(5);
-            Thread.Sleep(1500);
         }
 
         [TestCleanup]
