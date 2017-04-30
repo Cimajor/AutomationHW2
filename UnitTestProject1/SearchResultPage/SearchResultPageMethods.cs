@@ -12,7 +12,7 @@ namespace UnitTestProject1
 {
     class SearchResultPageMethods// : Base
     {
-        Base baseIns;
+        private Base baseIns;
 
         public SearchResultPageMethods(Base baseIns) {
             this.baseIns = baseIns;

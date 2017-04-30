@@ -13,33 +13,39 @@ namespace UnitTestProject1
 {
     class MailsMethods
     {
-        //ChromeDriver chrome;
+        private Base baseIns;
+        private ChromeDriver chrome;
 
-        //public static void CreateTestMessage(string user, int port, string server)
-        //{
-        //    string to = user;
-        //    string from = user;
-        //    string subject = "Using the new SMTP client.";
-        //    string body = @"Using this new feature, you can send an e-mail message from an application very easily.";
-        //    MailMessage message = new MailMessage(from, to, subject, body);
-        //    SmtpClient client = new SmtpClient(server, port);
-        //    // Credentials are necessary if the server requires the client 
-        //    // to authenticate before it will send e-mail on the client's behalf.
-        //    client.Credentials = CredentialCache.DefaultNetworkCredentials;
-        //    try
-        //    {
-        //        client.Send(message);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Exception caught in CreateTestMessage1(): {0}",
-        //                    ex.ToString());
-        //    }
-        //}
-        //public void checkMailsSubject()
-        //{
-        //    chrome.FindElementById(":3f").Text.Equals("Using the new SMTP client.");
-        //    //Assert.IsTrue(chrome.PageSource.Contains("Using the new SMTP client."));
-        //}
+        public MailsMethods(Base baseIns)
+        {
+            this.baseIns = baseIns;
+            chrome = baseIns.getChromeDriver();
+        }
+
+        public static void CreateTestMessage(string user, int port, string server, string rundomSubject)
+        {
+            string to = user;
+            string from = user;
+            string subject = rundomSubject;
+            string body = @"Using this new feature, you can send an e-mail message from an application very easily.";
+            MailMessage message = new MailMessage(from, to, subject, body);
+            SmtpClient client = new SmtpClient(server, port);
+
+            client.Credentials = CredentialCache.DefaultNetworkCredentials;
+            try
+            {
+                client.Send(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in CreateTestMessage1(): {0}",
+                            ex.ToString());
+            }
+        }
+        public void checkMailsSubject(string randomSubject)
+        {
+            //chrome.FindElementById(":3f").Text.Equals("Using the new SMTP client.");
+            Assert.IsTrue(chrome.PageSource.Contains(randomSubject));
+        }
     }
 }

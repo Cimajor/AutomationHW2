@@ -9,23 +9,26 @@ using System.Threading;
 
 namespace UnitTestProject1
 {
-    class LoginPageMethods : Base
+    class LoginPageMethods
     {
-        //public LoginPageMethods():base()
-        //{
+        private Base baseIns;
+        ChromeDriver chrome;
 
-        //}
-        //public void LoginToGmail(string loginName, string loginPassword)
-        //{
-        //    chrome.FindElementById(GoogleHomePageSelectors.loginButtonId).Click();
-        //    chrome.FindElementById(LoginPageSelectors.userMailLoginId).SendKeys(loginName);
-        //    chrome.FindElementById(LoginPageSelectors.confirmLoginId).Click();
-        //    Thread.Sleep(1500); //Problems with wait.Until
-        //    //var wait = new WebDriverWait(chrome, TimeSpan.FromSeconds(10)); //waiter for password field
-        //    //wait.Until(chrome => !chrome.FindElement(By.Id(LoginPageSelectors.passwordFieldId)).Displayed);
-        //    chrome.FindElementById(LoginPageSelectors.passwordFieldId).SendKeys(loginPassword);
-        //    chrome.FindElementById(LoginPageSelectors.passwordConfirmationButtonId).Click();
-        //    chrome.Navigate().GoToUrl(MailVariable.gmailMailUrl);
-        //}
+        public LoginPageMethods(Base baseIns)
+        {
+            this.baseIns = baseIns;
+            chrome = baseIns.getChromeDriver();
+        }
+
+        public void LoginToGmail(string loginName, string loginPassword)
+        {
+            
+            chrome.FindElementById(GoogleHomePageSelectors.loginButtonId).Click();
+            chrome.FindElementById(LoginPageSelectors.userMailLoginId).SendKeys(loginName);
+            chrome.FindElementById(LoginPageSelectors.confirmLoginId).Click();
+            chrome.FindElementById(LoginPageSelectors.passwordFieldId).SendKeys(loginPassword);
+            chrome.FindElementById(LoginPageSelectors.passwordConfirmationButtonId).Click();
+            chrome.Navigate().GoToUrl(MailVariable.gmailMailUrl);
+        }
     }
 }
