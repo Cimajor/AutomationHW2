@@ -12,17 +12,17 @@ namespace UnitTestProject1
     [TestClass]
     public class OpenLinksTest
     {
-        Base baseInst;
-        GoogleHomePageMethods googleHomePageMethods;
-        SearchResultPageMethods googleSearchResultMethods;
+        Driver driver;
+        GoogleHomePage googleHomePageMethods;
+        SearchResultPage googleSearchResultMethods;
 
         [TestInitialize]
         public void Start() {
-            baseInst = new Base();
-            googleHomePageMethods = new GoogleHomePageMethods(baseInst);
-            googleSearchResultMethods = new SearchResultPageMethods(baseInst);
-
-            baseInst.OpenHomePage();
+          //  baseInst = new Base();
+            googleHomePageMethods = new GoogleHomePage();
+            googleSearchResultMethods = new SearchResultPage();
+            driver = new Driver();
+            Base.GoToUrl("http://www.google.com.ua/");
         }
         
         [TestMethod]
@@ -35,7 +35,7 @@ namespace UnitTestProject1
         [TestCleanup]
         public void TearDown()
         {
-            baseInst.CloseBrowser();
+            Driver.CloseBrowser();
         }
     }
 }

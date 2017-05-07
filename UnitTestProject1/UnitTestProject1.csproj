@@ -61,18 +61,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="General\Base.cs" />
-    <Compile Include="GoogleHomePage\GoogleHomePageMethods.cs" />
-    <Compile Include="GoogleHomePage\GoogleHomePageSelector.cs" />
-    <Compile Include="LoginPage\LoginPageMethods.cs" />
-    <Compile Include="LoginPage\LoginPageSelectors.cs" />
-    <Compile Include="MailsMethods\MailsMethods.cs" />
-    <Compile Include="MailsMethods\MailVariable.cs" />
-    <Compile Include="MailTest.cs" />
-    <Compile Include="SearchResultPage\SearchResultPageMethods.cs" />
-    <Compile Include="SearchResultPage\SearchResultPageSeletors.cs" />
-    <Compile Include="OpenLinksTest.cs" />
+    <Compile Include="Core\Base.cs" />
+    <Compile Include="Core\Driver.cs" />
+    <Compile Include="Core\TablesMethods.cs" />
+    <Compile Include="Tests\MailTest.cs" />
+    <Compile Include="Pages\GoogleHomePage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\SearchReasultPage.cs" />
+    <Compile Include="Tests\OpenLinksTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\TableTest.cs" />
   </ItemGroup>
   <ItemGroup />
   <Choose>
