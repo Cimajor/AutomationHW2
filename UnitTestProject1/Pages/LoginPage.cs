@@ -27,7 +27,7 @@ namespace UnitTestProject1
         public static string xPathpasswordFieldIdNew = ".//*[@id='password']/div[1]/div/div[1]/input";
         public static string xPathpasswordConfirmationButtonIdNew = ".//*[@id='passwordNext']/content/span";
 
-        WebDriverWait Wait;
+       // WebDriverWait wait = new WebDriverWait(DriverInstance(), 10);
 
         public void LoginToGmailOld(string loginName, string loginPassword, string mailAddress)
         {
@@ -42,18 +42,20 @@ namespace UnitTestProject1
 
         public void LoginToGmailNew(string loginName, string loginPassword, string mailAddress)
         {
-
+            Base.WaitForElementLoad(By.Id(loginGoogleButton), 5);
             DriverInstance().FindElementById(loginGoogleButton).Click();
+            Base.WaitForElementLoad(By.Id(userLoginMailFieldIdNew), 5);
             DriverInstance().FindElementById(userLoginMailFieldIdNew).SendKeys(testUserName);
+            Base.WaitForElementLoad(By.XPath(xPathconfirmLoginIdNew), 5);
             DriverInstance().FindElementByXPath(xPathconfirmLoginIdNew).Click();
+            Base.WaitForElementLoad(By.XPath(xPathpasswordFieldIdNew), 5);
             DriverInstance().FindElementByXPath(xPathpasswordFieldIdNew).SendKeys(loginPassword);
+            Base.WaitForElementLoad(By.XPath(xPathpasswordConfirmationButtonIdNew), 5);
             DriverInstance().FindElementByXPath(xPathpasswordConfirmationButtonIdNew).Click();
-            DriverInstance().Navigate().GoToUrl(mailAddress);
-        }
-
-        public void WaitForElementPresent(By element)
-        {
-            Wait.Until(ExpectedConditions.ElementExists(element));
+            Base.WaitForElementLoad(By.XPath("//*[@id='gbwa']/div[1]/a"), 5);               // press on menu button
+            DriverInstance().FindElementByXPath("//*[@id='gbwa']/div[1]/a").Click();
+            Base.WaitForElementLoad(By.XPath("//*[@id='gb23']/span[1]"), 5);            // press on mail button
+            DriverInstance().FindElementByXPath("//*[@id='gb23']/span[1]").Click();
         }
     }
 }

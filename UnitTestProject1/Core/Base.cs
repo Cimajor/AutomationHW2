@@ -74,5 +74,14 @@ namespace UnitTestProject1
         {
             Assert.IsTrue(Driver.DriverInstance().PageSource.Contains(randomSubject));
         }
+
+        public static void WaitForElementLoad(By by, int timeoutInSeconds)
+        {
+            if (timeoutInSeconds > 0)
+            {
+                WebDriverWait wait = new WebDriverWait(Driver.DriverInstance(), TimeSpan.FromSeconds(timeoutInSeconds));
+                wait.Until(ExpectedConditions.ElementIsVisible(by));
+            }
+        }
     }
 }

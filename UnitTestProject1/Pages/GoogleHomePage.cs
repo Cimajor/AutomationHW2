@@ -19,7 +19,9 @@ namespace UnitTestProject1
 
         public void InputInSearchField(String searchInput) // Input something in search fied and press search button
         {
+            Base.WaitForElementLoad(By.Id(searchFieldID), 5);
             DriverInstance().FindElementById(searchFieldID).SendKeys(searchInput);
+            Base.WaitForElementLoad(By.Id(confirmSearchButtonId), 5);
             DriverInstance().FindElementById(confirmSearchButtonId).Click();
         }
 

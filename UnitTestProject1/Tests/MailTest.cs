@@ -36,12 +36,8 @@ namespace UnitTestProject1
         {
             string randomSubject = Base.RandomString(10);
             Base.CreateTestMessage(smtpUser, smtpPort, smtpServer, randomSubject);
-            Thread.Sleep(1500);
-            //IWebElement dynamicElement = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.XPath("dynamicElement_id")));
             loginPage.LoginToGmailNew(smtpUser, smtpPassword, gmailMailUrl);
-            Thread.Sleep(1500);
             bsaeMethods.checkMailsSubject(randomSubject);
-            Thread.Sleep(1500);
         }
 
         [TestCleanup]
